@@ -1,0 +1,33 @@
+<div ng-include="'views/header.html'"></div>
+
+<div ng-hide="loggedIn">
+    <input type="text" ng-model="userEmail" placeholder="Email" />
+    <input type="password" ng-model="userPassword" placeholder="Password" />
+    <input type="submit" ng-click="login(userEmail, userPassword)" />
+</div>
+<div ng-show="loggedIn">
+    <a ng-click="logout()">Log out</a>
+
+    <br /><br />
+    Round: <input type="text" ng-model="report.round" />
+
+    <table>
+        <tr>
+            <td>Result:</td>
+            <td>
+                <select ng-model="report.teamA.player" ng-options="player.name for player in players"></select>
+                <input type="text" ng-model="report.teamA.score" style="width:30px;text-align: center;" />
+            </td>
+            <td>vs</td>
+            <td>
+                <input type="text" ng-model="report.teamB.score" style="width:30px;text-align: center;" />
+                <select ng-model="report.teamB.player" ng-options="player.name for player in players"></select>
+            </td>
+        </tr>
+    </table>
+
+    <a ng-click="submitMatchReport(report)">Submit race report</a>
+</div>
+<br />
+<div class="footer">
+</div>

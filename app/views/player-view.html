@@ -1,0 +1,26 @@
+<div ng-include="'views/header.html'"></div>
+
+<div>
+    <h1>{{ player.name }}</h1>
+    <h3>{{ player.team }}</h3>
+	<img ng-src="{{ player.imgUrl }}" align="left" />
+
+    <br /><br /><br />
+    <ul>
+        <li><b>Games played:</b> {{ player.played }}</li>
+        <li><b>Wins:</b> {{ player.wins }} ({{ player.wins/player.played*100 | number: 2 }}%)</li>
+        <li><b>Draws:</b> {{ player.draws }} ({{ player.draws/player.played*100 | number: 2 }}%)</li>
+        <li><b>Losses:</b> {{ player.losses }} ({{ player.losses/player.played*100 | number: 2 }}%)</li>
+        <li><b>Goals:</b> {{ player.goals }}</li>
+        <li><b>Conceded:</b> {{ player.conceded }}</li>
+        <li><b>Goal Difference:</b> {{ player.goalDiff }}</li>
+        <li><b>Goals per game:</b> {{ player.goals/player.played | number : 2 }}</li>
+        <li><b>Conceded per game:</b> {{ player.conceded/player.played | number : 2 }}</li>
+    </ul>
+    <br /><br /><br /><br /><br /><br />
+
+</div>
+<br /><br />
+<div class="footer">
+</div>
+

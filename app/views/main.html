@@ -1,0 +1,41 @@
+<div ng-include="'views/header.html'"></div>
+
+<h2>Summer 2014 Standings</h2>
+<table>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>Played</th>
+        <th>Wins</th>
+        <th>Draws</th>
+        <th>Losses</th>
+        <th title="Goals Scored">+</th>
+        <th title="Goals Conceded">-</th>
+        <th title="Goal Difference">+/-</th>
+        <th>Points</th>
+    </tr>
+    <tr ng-repeat="player in standings | orderBy: ['-points', '-goalDiff', '-goals', 'team']">
+        <td>{{ $index + 1 }}</td>
+        <td>
+            <a href="/#/player/{{player.id}}">
+                <img ng-src="{{ player.imgUrlSmall }}" title="{{ player.name }}" width="32" height="32" />
+            </a>
+        </td>
+        <td><a href="/#/player/{{player.id}}">{{ player.team }}</a></td>
+        <td>{{ player.played }}</td>
+        <td>{{ player.wins }}</td>
+        <td>{{ player.draws }}</td>
+        <td>{{ player.losses }}</td>
+        <td>{{ player.goals }}</td>
+        <td>{{ player.conceded }}</td>
+        <td>{{ player.goalDiff }}</td>
+        <td>{{ player.points }}</td>
+    </tr>
+</table>
+
+<br /><br />
+
+<div class="footer">
+</div>
+
